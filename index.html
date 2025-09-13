@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陶麓村 - 水岸装置艺术</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5A2B',      // 木色，呼应传统建筑
+                        secondary: '#D2B48C',    // 浅棕，呼应自然环境
+                        accent: '#4A6741',       // 青绿色，呼应水与植物
+                        light: '#F5F5DC',        // 米白色，作为背景
+                        dark: '#3E2723',         // 深棕色，用于文字
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                        serif: ['Noto Serif SC', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center bg-dark/80 bg-blur text-light">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-pagelines text-secondary text-xl"></i>
+                <span class="font-serif font-bold text-xl">陶麓村</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#overview" class="hover:text-secondary transition-colors duration-300">项目概述</a>
+                <a href="#concept" class="hover:text-secondary transition-colors duration-300">设计理念</a>
+                <a href="#gallery" class="hover:text-secondary transition-colors duration-300">装置展示</a>
+            </div>
+            <button class="md:hidden text-light focus:outline-none" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="hidden md:hidden bg-dark/95 bg-blur text-light" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#overview" class="py-2 hover:text-secondary transition-colors duration-300">项目概述</a>
+                <a href="#concept" class="py-2 hover:text-secondary transition-colors duration-300">设计理念</a>
+                <a href="#gallery" class="py-2 hover:text-secondary transition-colors duration-300">装置展示</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/cc81370d52684b7eb0b2404cd783a7b9.png~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&x-expires=1758273521&x-signature=sFdLlIOECXoD9vpbQfJarRPE0KI%3D" 
+                 alt="陶麓村水岸景观" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/40"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="font-serif font-bold text-[clamp(2.5rem,8vw,5rem)] text-light mb-6 leading-tight text-shadow-lg animate-float">
+                陶麓村<br>水岸装置艺术
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-light/90 max-w-2xl mx-auto mb-10 text-shadow">
+                历史与当代的交融，重现"无陶不成市"的商贸记忆
+            </p>
+            <a href="#overview" class="inline-block bg-primary hover:bg-primary/90 text-light font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                探索项目 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-light animate-bounce">
+            <i class="fa fa-angle-double-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- 项目概述 -->
+    <section id="overview" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-[clamp(1.8rem,5vw,3rem)] text-dark mb-4">项目概述</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        本项目位于陶麓村，巧妙地将历史埠头与"西施浣纱"的经典典故相结合，创造出独特的视觉意象。设计团队将传统的码头阶梯转化为悬浮的当代艺术符号，既保留了历史记忆，又赋予其全新的现代意义。
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        装置以多层网布构成通透的层叠形态，半透明材质巧妙地引导光线并通透景观，避免遮挡珍贵的临湖视野。布片随风轻漾，宛如湖波漫过石阶，唤醒"无陶不成市"的悠久商贸记忆。
+                    </p>
+                    <div class="flex items-center space-x-4 mt-8">
+                        <div class="w-12 h-1 bg-accent"></div>
+                        <p class="text-primary font-medium italic">传承文化记忆，重塑水岸空间</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 relative">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/cc81370d52684b7eb0b2404cd783a7b9.png~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&x-expires=1758273521&x-signature=sFdLlIOECXoD9vpbQfJarRPE0KI%3D" 
+                         alt="陶麓村水岸建筑景观" 
+                         class="w-full h-auto rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-lg -z-10"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-primary/10 rounded-lg -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 设计理念 -->
+    <section id="concept" class="py-20 bg-gradient-to-b from-light to-secondary/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-[clamp(1.8rem,5vw,3rem)] text-dark mb-4">设计理念</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+                <div class="relative">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/edf285a164524be392e224392402dcb0.jpg~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&x-expires=1758273521&x-signature=L%2FH7MEohrFim9BEO5%2FtBuubf1Bk%3D" 
+                         alt="陶麓村装置艺术细节" 
+                         class="w-full h-auto rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-lg -z-10"></div>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-2xl mb-6 text-primary">材料与形态</h3>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        装置采用的网布兼具柔韧性与耐候性，完美适应户外环境。精心设计的结构使地面能投射出动人的水纹光影，营造出虚实交织的视觉效果。
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        整体设计以"风"为无形之水、"布"为记忆经纬，通过动态元素与静态结构的对比，使消逝的码头在当代湖畔重生为诗意的动态地标，重构水岸公共性。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center space-x-2 bg-secondary/20 px-4 py-2 rounded-full">
+                            <i class="fa fa-leaf text-accent"></i>
+                            <span>自然材料</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-secondary/20 px-4 py-2 rounded-full">
+                            <i class="fa fa-lightbulb-o text-accent"></i>
+                            <span>光影互动</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-secondary/20 px-4 py-2 rounded-full">
+                            <i class="fa fa-history text-accent"></i>
+                            <span>历史记忆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white/70 backdrop-blur-sm p-8 md:p-12 rounded-xl shadow-lg border border-secondary/20">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 hover:bg-light rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa fa-water text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-4">水之意象</h3>
+                        <p class="text-gray-700">以"西施浣纱"为灵感，通过现代材料重现水的流动感与灵动感，呼应地域文化记忆。</p>
+                    </div>
+                    <div class="text-center p-6 hover:bg-light rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa fa-exchange text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-4">古今对话</h3>
+                        <p class="text-gray-700">将历史埠头元素转化为当代艺术语言，创造过去与现在的对话，延续地方文化脉络。</p>
+                    </div>
+                    <div class="text-center p-6 hover:bg-light rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa fa-users text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-4">公共空间</h3>
+                        <p class="text-gray-700">重构水岸公共性，创造供村民与游客互动、休憩的诗意空间，激活滨水区域活力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 装置展示 -->
+    <section id="gallery" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-bold text-[clamp(1.8rem,5vw,3rem)] text-dark mb-4">装置展示</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    装置艺术以其独特的形态与周围环境和谐共生，成为陶麓村一道亮丽的风景线，既传承历史记忆，又展现当代美学
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/cc81370d52684b7eb0b2404cd783a7b9.png~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&x-expires=1758273521&x-signature=sFdLlIOECXoD9vpbQfJarRPE0KI%3D" 
+                         alt="陶麓村水岸全景" 
+                         class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-6 text-light">
+                            <h3 class="font-serif font-bold text-xl mb-2">水岸全景</h3>
+                            <p>装置与周边建筑、自然环境和谐融合，形成一幅美丽的水岸画卷</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/edf285a164524be392e224392402dcb0.jpg~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&x-expires=1758273521&x-signature=L%2FH7MEohrFim9BEO5%2FtBuubf1Bk%3D" 
+                         alt="装置艺术细节" 
+                         class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-6 text-light">
+                            <h3 class="font-serif font-bold text-xl mb-2">装置细节</h3>
+                            <p>网布构成的通透层叠形态，随风轻漾，如湖波漫过石阶</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-light py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-pagelines text-secondary text-xl"></i>
+                        <span class="font-serif font-bold text-xl">陶麓村装置艺术</span>
+                    </div>
+                    <p class="text-light/70 max-w-md">
+                        传承历史文脉，重塑水岸空间，让消逝的码头在当代湖畔重生为诗意的动态地标
+                    </p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-light/70 mb-2">版权所有 © 2025 浙大宁波理工学院建筑学实践课程组</p>
+                    <p class="text-light/50 text-sm">保留所有权利</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-light w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-dark/95');
+                navbar.classList.remove('bg-dark/80');
+                backToTop.classList.remove('opacity-0', 'translate-y-10');
+                backToTop.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                navbar.classList.remove('bg-dark/95');
+                navbar.classList.add('bg-dark/80');
+                backToTop.classList.add('opacity-0', 'translate-y-10');
+                backToTop.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+        
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 返回顶部按钮
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 图片加载动画
+        document.querySelectorAll('img').forEach(img => {
+            img.classList.add('opacity-0', 'transition-opacity', 'duration-700');
+            img.addEventListener('load', function() {
+                this.classList.remove('opacity-0');
+                this.classList.add('opacity-100');
+            });
+            // 如果图片已经缓存
+            if (img.complete) {
+                img.classList.remove('opacity-0');
+                img.classList.add('opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>
